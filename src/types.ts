@@ -1,4 +1,10 @@
 // ChuckNorrisAPI Types
+
+interface ErrorResponse{
+    categories: string[],
+    value: string
+}
+
 interface JokeResponse {
     icon_url: string;
     id: string,
@@ -6,9 +12,4 @@ interface JokeResponse {
     value: string
 }
 
-interface ErrorResponse{
-    value: string,
-    categories?: string[]
-}
-
-export type {JokeResponse, ErrorResponse};
+export type {ErrorResponse, JokeResponse};

@@ -3,22 +3,19 @@
 import express from "express";
 const app = express();
 const PORT = process.env.PORT ?? "9001";
-const ENVIRONMENT = process.env.NODE_ENV || "development";
+const ENVIRONMENT = process.env.NODE_ENV ?? "development";
 
-import type { ErrorResponse } from "./types"
+//import type { ErrorResponse } from "./types"
 
 // Tools
 import {ChuckNorrisAPI} from "./util/ChuckNorrisAPI"
 
-app.get('/users', function (req, res) {
-  res.json({ users: 'allUsers' });
+// Testing Only - Do not use
+app.get('/ping', function (req, res) {
+  res.send("pong!")
 });
 
-app.get('/users/3', function (req, res) {
-  res.json({ user: 'user3' });
-});
-
-app.get('/joke', async (req, res) => {
+app.get('/joke',  (req, res) => {
   res.redirect('/joke/random')
 });
 
