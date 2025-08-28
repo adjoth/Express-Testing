@@ -5,7 +5,7 @@
   "license": "ISC",
   "description": "Building a Express server for developing API testing using jest and supertest",
   "scripts": {
-    "dev": "tsx --watch --env-file .env src/server.ts",
+    "dev": "tsx --env-file .env --watch src/server.ts --include src/*",
     "start": "node dist/index.js",
     "build": "tsc",
     "type-check": "tsc --noEmit",
