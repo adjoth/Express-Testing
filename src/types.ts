@@ -12,4 +12,15 @@ interface JokeResponse {
     value: string
 }
 
-export type {ErrorResponse, JokeResponse};
+interface Logger {
+    add: () => void;
+    jokeCounter: number;
+}
+
+const cacheLogger: Logger = {
+  add: () => { cacheLogger.jokeCounter++ },
+  jokeCounter: 0
+}
+
+export type {ErrorResponse, JokeResponse, Logger};
+export {cacheLogger};
